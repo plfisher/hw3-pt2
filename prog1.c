@@ -19,7 +19,7 @@ int t1 = 0, t2 = 1, nextTerm = 0, n;
   
   if (fork() == 0) 
   {
-    printf("%d", t2%10)
+    printf("%d", t2%10);
   }
   
 }
