@@ -1,7 +1,9 @@
 #include <stdio.h>
+#include <stdlib.h>
 int main(int argc, char** argv) {
 
-  int num=*(*(argv+1));
-  printf("%c", num);
+  char numchar=*(*(argv+1));
+  int num=atoi(numchar);
+  printf("%d", num);
   
 }
