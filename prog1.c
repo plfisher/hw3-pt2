@@ -5,6 +5,7 @@
 
 int main(int argc, char** argv) {
 int t1 = 0, t2 = 1, nextTerm = 0, n;
+  int i=0;
   
   char * numchar=(*(argv+1));
   int num=atoi(numchar);
