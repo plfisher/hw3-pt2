@@ -2,6 +2,6 @@
 int main(int argc, char** argv) {
 
   int num=*(*argv+1);
-  printf("%s", num);
+  printf("%c", num);
   
 }
