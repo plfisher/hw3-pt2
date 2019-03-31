@@ -14,15 +14,14 @@ int main(int argc, char** argv) {
   
   char * numchar=(*(argv+1));
   int num=atoi(numchar);
-  
+  printf("%d", num);
   pid_t pid=Fork();
   if(pid==0)
   {
   int gnum=(1+sqrt(5))/2;
     int numerator=(pow(gnum, num))-(pow((1-gnum), num));
     int result=round(numerator/sqrt(5));
-    printf("%d\n", result);
-    exit(result);
+    exit(5);
   }
   else
   {
