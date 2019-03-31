@@ -25,15 +25,15 @@ int main(int argc, char** argv) {
   else
   {
     int status;
-    signal(SIGCHLD, handler);
+    //signal(SIGCHLD, handler);
     if ( waitpid(pid, &status, 0) == -1 ) {
         perror("waitpid failed");
         return EXIT_FAILURE;
     }
 
     if ( WIFEXITED(status) ) {
-        const int es = WEXITSTATUS(status);
-        printf("exit status was %d\n", es);
+        int es = WEXITSTATUS(status);
+        printf("%d\n", es);
     }
   }
 }
