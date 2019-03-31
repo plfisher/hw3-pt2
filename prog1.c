@@ -29,7 +29,7 @@ int main(int argc, char** argv) {
     int returnval=WIFEXITED(pid);
     printf("%d", returnval);
   }
-
+}
 pid_t Fork(void)
 {
   pid_t pid;
