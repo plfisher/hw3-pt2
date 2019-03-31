@@ -17,10 +17,10 @@ int main(int argc, char** argv) {
   pid_t pid=Fork();
   if(pid==0)
   {
-  int gnum=(1+sqrt(5))/2;
-    int numerator=(pow(gnum, num))-(pow((1-gnum), num));
+  double gnum=(1+sqrt(5))/2;
+    double numerator=(pow(gnum, num))-(pow((1-gnum), num));
     int result=round(numerator/sqrt(5));
-    printf("%d\n", gnum);
+    printf("%d\n", result);
     exit(result);
   }
   else
