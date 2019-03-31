@@ -20,11 +20,10 @@ int main(int argc, char** argv) {
   double gnum=(1+sqrt(5))/2;
     double numerator=(pow(gnum, num))-(pow((1-gnum), num));
     int result=round(numerator/sqrt(5));
-    exit(result);
+    exit(result%10);
   }
   else
   {
-    printf("%d", pid);
     int status;
     //signal(SIGCHLD, handler);
     waitpid(pid, &status, 0); 
