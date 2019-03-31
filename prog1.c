@@ -24,8 +24,9 @@ int main(int argc, char** argv) {
   }
   else
   {
+    int status;
     signal(SIGCHLD, handler);
-    int returnval=WIFEXITED(pid);
+    int returnval=WIFEXITED(status);
     printf("%d", returnval);
   }
 }
