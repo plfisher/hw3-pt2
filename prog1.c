@@ -26,14 +26,14 @@ int main(int argc, char** argv) {
   {
     int status;
     signal(SIGCHLD, handler);
-    if ( waitpid(ret, &status, 0) == -1 ) {
-        perror("waitpid() failed");
-        exit(EXIT_FAILURE);
+    if ( waitpid(pid, &status, 0) == -1 ) {
+        perror("waitpid failed");
+        return EXIT_FAILURE;
     }
 
     if ( WIFEXITED(status) ) {
-        int es = WEXITSTATUS(status);
-        printf("Exit status was %d\n", es);
+        const int es = WEXITSTATUS(status);
+        printf("exit status was %d\n", es);
     }
   }
 }
