@@ -20,21 +20,21 @@ int main(int argc, char** argv) {
   double gnum=(1+sqrt(5))/2;
     double numerator=(pow(gnum, num))-(pow((1-gnum), num));
     int result=round(numerator/sqrt(5));
+    printf("%d\n", result);
     exit(result);
   }
   else
   {
     int status;
     //signal(SIGCHLD, handler);
-    if ( waitpid(pid, &status, 0) == -1 ) {
-        perror("waitpid failed");
-        return EXIT_FAILURE;
-    }
-
-    if ( WIFEXITED(status) ) {
-        int es = WEXITSTATUS(status);
-        printf("%d\n", es);
-    }
+    waitpid(pid, &status, 0); 
+  
+    if ( WIFEXITED(status) ) 
+    { 
+        int exit_status = WEXITSTATUS(status);         
+        printf("%d\n",  
+                                     exit_status); 
+    } 
   }
 }
 pid_t Fork(void)
