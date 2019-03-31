@@ -20,14 +20,14 @@ int main(int argc, char** argv) {
   int gnum=(1+sqrt(5))/2;
     int numerator=(pow(gnum, num))-(pow((1-gnum), num));
     int result=round(numerator/sqrt(5));
-    printf("%d\n", result);
+    printf("%d\n", gnum);
     exit(result);
   }
   else
   {
     signal(SIGCHLD, handler);
     int returnval=WIFEXITED(pid);
-    printf("%d", returnval);
+    //printf("%d", returnval);
   }
 }
 pid_t Fork(void)
