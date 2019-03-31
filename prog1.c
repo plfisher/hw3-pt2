@@ -26,8 +26,11 @@ int main(int argc, char** argv) {
   {
     int status;
     signal(SIGCHLD, handler);
-    int returnval=WIFEXITED(status);
+    if(WIFEXITED(status))
+    {
+    int returnval=WIFEXITSTATUS(status);
     printf("%d", returnval);
+    }
   }
 }
 pid_t Fork(void)
