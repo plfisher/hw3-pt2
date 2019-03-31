@@ -21,6 +21,7 @@ int main(int argc, char** argv) {
   int gnum=(1+sqrt(5))/2;
     int numerator=(pow(gnum, num))-(pow((1-gnum), num));
     int result=round(numerator/sqrt(5));
+    printf("%d\n", result);
     exit(result);
   }
   else
