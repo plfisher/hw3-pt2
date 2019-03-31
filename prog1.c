@@ -26,7 +26,7 @@ int main(int argc, char** argv) {
   {
     int status;
     signal(SIGCHLD, handler);
-    //waitpid(pid, &status, 0); 
+    waitpid(pid, &status, 0); 
   
     if ( WIFEXITED(status) ) 
     { 
