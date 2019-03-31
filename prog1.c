@@ -3,13 +3,17 @@
 #include <sys/types.h> 
 #include <unistd.h>
 #include <math.h>
+#include <sys/wait.h>
+#include <signal.h>
+
+void handler(int sig);
+pid_t Fork(void);
 
 int main(int argc, char** argv) {
 
   
   char * numchar=(*(argv+1));
   int num=atoi(numchar);
-  n=num;
   
   pid_t pid=Fork();
   if(pid==0)
@@ -31,7 +35,7 @@ pid_t Fork(void)
   pid_t pid;
   
   if((pid=fork())<0)
-    unix_error("Fork error");
+    perror("Fork error");
   return pid;
 }
   
