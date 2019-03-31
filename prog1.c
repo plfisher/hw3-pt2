@@ -28,7 +28,7 @@ int main(int argc, char** argv) {
     signal(SIGCHLD, handler);
     if(WIFEXITED(status))
     {
-    int returnval=WIFEXITSTATUS(status);
+    int returnval=WEXITSTATUS(status);
     printf("%d", returnval);
     }
   }
