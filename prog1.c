@@ -20,11 +20,11 @@ int main(int argc, char** argv) {
   double gnum=(1+sqrt(5))/2;
     double numerator=(pow(gnum, num))-(pow((1-gnum), num));
     int result=round(numerator/sqrt(5));
-    printf("%d\n", result);
     exit(result);
   }
   else
   {
+    printf("%d", pid);
     int status;
     //signal(SIGCHLD, handler);
     waitpid(pid, &status, 0); 
@@ -32,8 +32,7 @@ int main(int argc, char** argv) {
     if ( WIFEXITED(status) ) 
     { 
         int exit_status = WEXITSTATUS(status);         
-        printf("%d\n",  
-                                     exit_status); 
+        printf("%d\n", exit_status); 
     } 
   }
 }
