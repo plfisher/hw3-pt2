@@ -15,7 +15,7 @@ int main(int argc, char** argv) {
   
   char * numchar=(*(argv+1));
   int num=atoi(numchar);
-  printf("%d/n", num);
+  printf("%d\n", num);
   pid_t pid=Fork();
   if(pid==0)
   {
