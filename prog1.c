@@ -21,7 +21,7 @@ int main(int argc, char** argv) {
     longlongint f[60];
     f[0]=0;
     f[1]=1;
-    int i=0;
+    longlongint i=0;
     for(i=2;i<=60;i++)
     {
       f[i]=(f[i-1]+f[i-2])%10;
