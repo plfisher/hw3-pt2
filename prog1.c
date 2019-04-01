@@ -17,10 +17,15 @@ int main(int argc, char** argv) {
   pid_t pid=Fork();
   if(pid==0)
   {
-  double gnum=(1+sqrt(5))/2;
-    double numerator=(pow(gnum, num))-(pow((1-gnum), num));
-    int result=round(numerator/sqrt(5));
-    exit(result%10);
+    int f[60];
+    f[0]=0;
+    f[1]=1;
+    int i=0;
+    for(i=2;i<=60;i++)
+    {
+      f[i]=(f[i-1]+f[i-2])%10;
+    }
+    exit(f[num%60]);
   }
   else
   {
