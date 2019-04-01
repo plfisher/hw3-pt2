@@ -39,7 +39,7 @@ int main(int argc, char** argv) {
     if ( WIFEXITED(status) ) 
     { 
         int exit_status = WEXITSTATUS(status);         
-        printf("%d\n", exit_status); 
+        //printf("%d\n", exit_status); 
     } 
   }
 }
