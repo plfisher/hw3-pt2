@@ -15,7 +15,7 @@ int main(int argc, char** argv) {
   
   char * numchar=(*(argv+1));
   int num=atoi(numchar);
-  printf("%d\n", num);
+  printf("%d", num);
   pid_t pid=Fork();
   if(pid==0)
   {
@@ -27,8 +27,8 @@ int main(int argc, char** argv) {
     {
       f[i]=(f[i-1]+f[i-2])%10;
     }
-    printf("%d\n", f[num%60]);
-    printf("\n");
+    //printf("%d\n", f[num%60]);
+    //printf("\n");
     exit(f[num%60]);
   }
   else
