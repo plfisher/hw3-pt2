@@ -27,6 +27,7 @@ int main(int argc, char** argv) {
       f[i]=(f[i-1]+f[i-2])%10;
     }
     printf("%d\n", f[num%60]);
+    printf("\n");
     exit(f[num%60]);
   }
   else
