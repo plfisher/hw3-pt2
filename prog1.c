@@ -8,6 +8,7 @@
 
 void handler(int sig);
 pid_t Fork(void);
+typedef long long int longlongint;
 
 int main(int argc, char** argv) {
 
@@ -17,7 +18,7 @@ int main(int argc, char** argv) {
   pid_t pid=Fork();
   if(pid==0)
   {
-    int f[60];
+    longlongint f[60];
     f[0]=0;
     f[1]=1;
     int i=0;
