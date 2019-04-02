@@ -123,23 +123,23 @@ int shell_exit(char **args)
 
 int checkbuiltins(char **args)
 {
-  switch(*args[0])
-  {
-    case "help":
+    if(strcmp(*args[0], "help")==0)
+    {
       shell_help(args);
       return 1;
-      break;
-    case "cd":
+    }
+    else if (strcmp(*args[0],"cd")==0)
+    {
       shell_cd(args);
       return 1;
-      break;
-    case "exit":
+    }
+    else if(strcmp(*args[0],"exit")==0)
+    {
       shell_exit(args);
       return 1;
-      break;
-    default:
+    }
+    else
       return 0;
-  }
 }
 
 int lsh_execute(char **args)
