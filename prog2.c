@@ -123,7 +123,7 @@ int shell_exit(char **args)
 
 int checkbuiltins(char **args)
 {
-    if(strcmp(*args[0], "help")==0)
+    if(strcmp(**args[0], "help")==0)
     {
       shell_help(args);
       return 1;
