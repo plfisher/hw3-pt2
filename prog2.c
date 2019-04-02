@@ -128,12 +128,12 @@ int checkbuiltins(char **args)
       shell_help(args);
       return 1;
     }
-    else if (strcmp(*args[0],"cd")==0)
+    else if (strcmp(args[0],"cd")==0)
     {
       shell_cd(args);
       return 1;
     }
-    else if(strcmp(*args[0],"exit")==0)
+    else if(strcmp(args[0],"exit")==0)
     {
       shell_exit(args);
       return 1;
