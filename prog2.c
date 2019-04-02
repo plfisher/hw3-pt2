@@ -63,7 +63,7 @@ char **lsh_split_line(char *line)
       args=realloc(args, buffersize *sizeof(char*));
       
     }
-     args=strtok(NULL, " \t\r\n\a");
+     arg=strtok(NULL, " \t\r\n\a");
   }
  args[i]=NULL;
  return args; 
@@ -98,7 +98,7 @@ int shell_cd(char **args);
 int shell_help(char **args);
 int shell_exit(char **args);
 
-char *builtincommands[3];
+char **builtincommands[3];
 builtincommands[0]="cd";
 builtincommands[1]="help";
 builtincommands[2]="exit";
