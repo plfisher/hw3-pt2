@@ -4,16 +4,20 @@
 #include <stdlib.h>
 #include <string.h>
 
-
-for(i=0;i<5;i++)
+int main(int argc, char **argv)
+{
+ 
+    for(i=0;i<5;i++)
     {
       printf("%d\n",(i+1));
       sleep(1);
     }
+    sigprocmask(SIG_UNBLOCK, &signalset, NULL);
     while(i<10)
     {
       printf("%d\n", (i+1));
       sleep(1);
       i++;
     }
-    sigprocmask(SIG_UNBLOCK, &signalset, NULL);
+    
+}
