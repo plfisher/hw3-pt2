@@ -8,6 +8,8 @@ fib:
 sshell:
 		gcc -g prog2.c -lm -o simple_shell
 		
+sigblock:
+		gcc -g prog3.c -lm -o shell
 clean:
 		rm practice
 
