@@ -1,3 +1,9 @@
+#include <signal.h>
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
 
 for(i=0;i<5;i++)
     {
