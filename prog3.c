@@ -2,6 +2,12 @@
 #include <unistd.h>
 #include <stdio.h>
 
+void shell_loop();
+char *shell_read_line(void);
+char **shell_split_line(char *line);
+int shell_execute(char **args);
+
+
 sigset_t signalset;
 int main(int argc, char **argv)
 {
