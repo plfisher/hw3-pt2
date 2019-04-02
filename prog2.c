@@ -94,24 +94,6 @@ int lsh_launch(char **args)
   return 1;
 }
 
-int shell_cd(char **args);
-int shell_help(char **args);
-int shell_exit(char **args);
-
-char *builtincommands[] = {
-  "cd",
-  "help",
-  "exit"
-};
-
-int shellbuiltin=3;
-
-int (*builtincommands[]) (char **)={
-  &shell_cd,
-  &shell_help,
-  &shell_exit
-};
-
 int shell_cd(char **args)
 {
   if(args[1]==NULL)
@@ -139,6 +121,26 @@ int shell_exit(char **args)
   return 0;
 }
 
+int checkbuiltins(**args)
+{
+  switch(**args[0])
+  {
+    case "help":
+      shell_help(args);
+      return 1;
+      break;
+    case "cd":
+      shell_cd(args);
+      return 1;
+      break;
+    case "exit":
+      shell_exit(args);
+      return 1;
+      break;
+    default:
+      return 0;
+  }
+}
 
 int lsh_execute(char **args)
 {
@@ -149,12 +151,8 @@ int lsh_execute(char **args)
     return 1;
   }
   
-  for(i =0;i<shellbuiltin;i++)
-  {
-    if(strcmp(args[0], builtincommands[i])==0)
-    {
-      return(*builtincommands[i])(args);
-    }
-  }
+  if(checkbuiltins(args)==1)
+    return 1;
+  
   return lsh_launch(args);
 }
