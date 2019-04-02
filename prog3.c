@@ -91,7 +91,7 @@ int shell_execute(char **args)
     if(pid==0)
     {
       args[0]="./child";
-      execv(args[0], argv);
+      execv(args[0], args);
       perror("execv");
     }
     
