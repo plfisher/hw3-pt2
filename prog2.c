@@ -121,7 +121,7 @@ int shell_exit(char **args)
   return 0;
 }
 
-int checkbuiltins(**args)
+int checkbuiltins(char **args)
 {
   switch(**args[0])
   {
