@@ -6,6 +6,11 @@
 #include <stdio.h>
 #include <string.h>
 
+void lsh_loop(void);
+char *lsh_read_line(void);
+char **lsh_split_line(char *line);
+int lsh_launch(char **args);
+
 int main(int argc, char **argv)
 {
   lsh_loop();
@@ -87,9 +92,9 @@ int lsh_launch(char **args)
   return 1;
 }
 
-int lsh_cd(char **args);
-int lsh_help(char **args);
-int lsh_exit(char **args);
+int shell_cd(char **args);
+int shell_help(char **args);
+int shell_exit(char **args);
 
 char *builtincommands[3];
 *builintcommands[0]="cd";
