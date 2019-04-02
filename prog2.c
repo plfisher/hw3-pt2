@@ -106,7 +106,8 @@ char *builtincommands[]=
 };
 
 int shellbuiltin=3;
-int(*builtincommands[]) (char**)={
+
+int (*builtincommands[]) (char**)={
   &shell_cd,
   &shell_help,
   &shell_exit
