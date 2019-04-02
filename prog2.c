@@ -98,8 +98,7 @@ int shell_cd(char **args);
 int shell_help(char **args);
 int shell_exit(char **args);
 
-char *builtincommands[] =
-{
+char *builtincommands[] = {
   "cd",
   "help",
   "exit"
@@ -152,7 +151,7 @@ int lsh_execute(char **args)
   
   for(i =0;i<shellbuiltin;i++)
   {
-    if(strcmp(args[0], builtincommands[i])==0)
+    if(strcmp(args[0], *builtincommands[i])==0)
     {
       return(*builtincommands[i])(args);
     }
