@@ -97,8 +97,8 @@ int lsh_launch(char **args)
 int shell_cd(char **args);
 int shell_help(char **args);
 int shell_exit(char **args);
-
-char *builtincommands[] = {
+char *builtincommands[];
+*builtincommands[] = {
   "cd",
   "help",
   "exit"
