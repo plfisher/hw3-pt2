@@ -112,7 +112,7 @@ int shell_cd(char **args)
 int shell_help(char **args)
 {
   int i;
-  printf("Type a command to be executed");
+  printf("Type a command to be executed\n");
   return 1;
 }
 
