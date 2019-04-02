@@ -98,7 +98,7 @@ int shell_execute(char **args)
       sleep(1);
       i++;
     }
-    sigprocmask(SIG_UNBLOCK, &signalset, NULL)
+    sigprocmask(SIG_UNBLOCK, &signalset, NULL);
       return 1;
   }
   else
