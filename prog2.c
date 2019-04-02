@@ -98,10 +98,12 @@ int shell_cd(char **args);
 int shell_help(char **args);
 int shell_exit(char **args);
 
-char **builtincommands[3];
-builtincommands[0]="cd";
-builtincommands[1]="help";
-builtincommands[2]="exit";
+char *builtincommands[]=
+{
+  "cd",
+"help",
+"exit"
+};
 
 int shellbuiltin=3;
 int(*builtincommands[]) (char**)={
