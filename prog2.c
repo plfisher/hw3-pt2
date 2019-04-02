@@ -99,9 +99,9 @@ int shell_help(char **args);
 int shell_exit(char **args);
 
 char *builtincommands[3];
-builintcommands[0]="cd";
-builintcommands[1]="help";
-builintcommands[2]="exit";
+builtincommands[0]="cd";
+builtincommands[1]="help";
+builtincommands[2]="exit";
 
 int shellbuiltin=3;
 int(*builtincommands[]) (char**)={
