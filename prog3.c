@@ -1,6 +1,7 @@
 #include <signal.h>
 #include <unistd.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 void shell_loop();
 char *shell_read_line(void);
