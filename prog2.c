@@ -136,10 +136,10 @@ int checkbuiltins(char **args)
     else if(strcmp(args[0],"exit")==0)
     {
       shell_exit(args);
-      return 1;
+      return 0;
     }
     else
-      return 0;
+      return 2;
 }
 
 int lsh_execute(char **args)
@@ -153,6 +153,8 @@ int lsh_execute(char **args)
   
   if(checkbuiltins(args)==1)
     return 1;
-  
+  else if(checkbuiltins(args)==0)
+    return 0;
+  else
   return lsh_launch(args);
 }
