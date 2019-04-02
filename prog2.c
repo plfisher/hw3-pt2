@@ -123,7 +123,7 @@ int shell_exit(char **args)
 
 int checkbuiltins(char **args)
 {
-  switch(**args[0])
+  switch(*args[0])
   {
     case "help":
       shell_help(args);
