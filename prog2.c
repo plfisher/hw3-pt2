@@ -5,11 +5,13 @@
 #include <sys/wait.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 void lsh_loop(void);
 char *lsh_read_line(void);
 char **lsh_split_line(char *line);
 int lsh_launch(char **args);
+int lsh_execute(char **args);
 
 int main(int argc, char **argv)
 {
@@ -49,7 +51,7 @@ char **lsh_split_line(char *line)
   char **args=malloc(buffersize*sizeof(char*));
   char *arg;
   
-  arg=strok(line, " \t\r\n\a");
+  arg=strtok(line, " \t\r\n\a");
   while(arg!=NULL)
   {
     args[i]=arg;
@@ -57,7 +59,7 @@ char **lsh_split_line(char *line)
     
     if(i>= buffersize)
     {
-      bufsize+=64;
+      buffersize+=64;
       args=realloc(args, buffersize *sizeof(char*));
       
     }
@@ -130,7 +132,7 @@ int shell_help(char **args)
   return 1;
 }
 
-int shell_ext(char **args)
+int shell_exit(char **args)
 {
   return 0;
 }
