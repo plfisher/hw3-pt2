@@ -98,11 +98,11 @@ int shell_cd(char **args);
 int shell_help(char **args);
 int shell_exit(char **args);
 
-char *builtincommands[]=
+char *builtincommands[] =
 {
   "cd",
-"help",
-"exit"
+  "help",
+  "exit"
 };
 
 int shellbuiltin=3;
