@@ -87,18 +87,14 @@ int shell_execute(char **args)
   }
   else if(strcmp(args[0],"run")==0)
   {
-    for(i=0;i<5;i++)
+    pid_t pid=fork();
+    if(pid==0)
     {
-      printf("%d\n",(i+1));
-      sleep(1);
+      argv[0]="./child";
+      execv(argv[0], argv);
+      perror("execv");
     }
-    while(i<10)
-    {
-      printf("%d\n", (i+1));
-      sleep(1);
-      i++;
-    }
-    sigprocmask(SIG_UNBLOCK, &signalset, NULL);
+    
       return 1;
   }
  
