@@ -6,7 +6,9 @@
 
 int main(int argc, char **argv)
 {
- 
+	sigset_t signalset;
+	sigaddset(&signalset, SIGINT);
+    int i=0;
     for(i=0;i<5;i++)
     {
       printf("%d\n",(i+1));

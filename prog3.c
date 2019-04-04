@@ -90,8 +90,7 @@ int shell_execute(char **args)
     pid_t pid=fork();
     if(pid==0)
     {
-      //args[0]="./child";
-      execv("./child.c", args);
+      execv("./child", args);
       perror("execv");
     }
     
